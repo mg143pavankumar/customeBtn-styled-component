@@ -1,12 +1,21 @@
 import styled from "styled-components";
-import { secondaryColor, secondaryDarkColor } from "../../constants/constants";
+
+// create a constants folder and include colors.js file
+/**  
+  add
+  export const primary = "";
+  export const secondary="";
+  
+**/
+
+import { primary, secondary } from "../../constants/colors";
 
 export const Button = styled.button`
   color: ${({ textColor }) => (textColor ? textColor : "#fff")};
   font-weight: 600;
   text-decoration: none;
   background-color: ${({ bgColor }) =>
-    bgColor ? bgColor : secondaryDarkColor};
+    bgColor ? bgColor : secondary};
   cursor: ${({ cursor }) => (cursor ? cursor : "pointer")};
   transition: 0.3s ease-in-out;
   border: none;
@@ -17,7 +26,7 @@ export const Button = styled.button`
 
   :hover {
     background-color: ${({ hoverBgColor }) =>
-      hoverBgColor ? hoverBgColor : secondaryColor};
+      hoverBgColor ? hoverBgColor : primary};
     opacity: ${({ opacityOnHover }) =>
       opacityOnHover ? opacityOnHover : "0.8"};
   }
