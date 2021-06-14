@@ -1,8 +1,19 @@
 import styled from "styled-components";
-import { primaryblue, secondaryblue } from "../../constants/colors";
+
+// create a constants folder and include color.js file
+/**  
+  add
+  export const primary = "";
+  export const secondary="";
+  
+  you can change colors 
+**/
+import { primary, secondary } from "../../constants/colors";
+
+
 
 const Button = styled.button`
-  background-color: ${({ bgColor }) => (bgColor ? bgColor : secondaryblue)};
+  background-color: ${({ primaryColor }) => (primaryColor ? primaryColor : secondary)};
   padding: ${({ paddingAll }) => (paddingAll ? paddingAll : "10")}px;
   color: ${({ textColor }) => (textColor ? textColor : "#fff")};
   border-radius: ${({ borderRadius }) =>
@@ -21,8 +32,8 @@ const Button = styled.button`
     left: 0;
     width: 50%;
     height: 100%;
-    background-color: ${({ bgTopColor }) =>
-      bgTopColor ? bgTopColor : primaryblue};
+    background-color: ${({ secondaryColor }) =>
+      secondaryColor ? secondaryColor : primary};
     border-top-left-radius: ${({ borderRadius }) =>
       borderRadius ? borderRadius : "10"}px;
     border-bottom-left-radius: ${({ borderRadius }) =>
@@ -38,8 +49,8 @@ const Button = styled.button`
     right: 0;
     width: 50%;
     height: 100%;
-    background-color: ${({ bgTopColor }) =>
-      bgTopColor ? bgTopColor : primaryblue};
+    background-color: ${({ secondaryColor }) =>
+      secondaryColor ? secondaryColor : primary};
     border-top-right-radius: ${({ borderRadius }) =>
       borderRadius ? borderRadius : "10"}px;
     border-bottom-right-radius: ${({ borderRadius }) =>
